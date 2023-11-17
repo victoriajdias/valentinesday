@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namora comigo, bebê</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+     <style>
+        body{
+            background-color: red;
+        }
+        .painel{
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #sim{
+           
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+            
+        }
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+        .img{
+            margin-top: 5%;
+        }
+     </style>
+</head>
+<body>
+    <div class="painel">
+        <img class="img" src="https://www.bing.com/th/id/OGC.fa494e85b6099eda29f75fa0ae547e7a?pid=1.7&rurl=https%3a%2f%2fgifman.net%2fwp-content%2fuploads%2f2019%2f06%2fursinho-fofo-apaixonado.gif&ehk=T3058Mk6FWECI7dZ2i3u4kel%2fOOh6uADoYeNfQU0LFU%3d" alt="">
+
+        <h2>Aceita namorar comigo?</h2>
+
+        <button id="sim">Sim!</button>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+
+    </div>
+
+    <script>
+        function fuja(){
+            const botaoNao = document.getElementById("nao")
+            const larguraJanela = window.innerWidth;
+            const alturaJanela = window.innerHeight;
+
+            const maxX = larguraJanela - botaoNao.offsetWidth;
+            const maxY = alturaJanela - botaoNao.offsetHeight;
+
+            const aleatorioX = Math.floor(Math.random() * maxX);
+            const aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
